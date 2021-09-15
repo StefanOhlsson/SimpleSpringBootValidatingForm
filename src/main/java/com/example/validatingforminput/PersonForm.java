@@ -6,12 +6,13 @@ import javax.validation.constraints.Size;
 
 public class PersonForm {
 
-    @NotNull
-    @Size(min = 2, max = 30)
+	
+	@NotNull(message = "Fältet får inte vara tomt!")
+    @Size(min = 2, max = 30, message = "Namnet måste innehålla minst två tecken!")
     private String name;
 
-    @NotNull
-    @Min(18)
+	@NotNull(message = "Fältet får inte vara tomt!")
+    @Min(value = 18, message = "Du måste vara 18 år eller äldre för att gå vidare.")
     private Integer age;
 
     public String getName() {

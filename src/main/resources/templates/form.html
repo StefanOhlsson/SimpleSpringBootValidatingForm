@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
 
 <style>
 .error {
@@ -7,19 +9,21 @@
 }
 </style>
 
+</head>
+
 <body>
 
 	<form action="#" th:action="@{/}" th:object="${personForm}"
 		method="post">
 		<table>
 			<tr>
-				<td>Namn:</td>
+				<td th:text="#{namn}"></td>
 				<td><input type="text" th:field="*{name}" /></td>
 				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
 					th:class="error">Name Error</td>
 			</tr>
 			<tr>
-				<td>Ålder:</td>
+				<td th:text="#{alder}"></td>
 				<td><input type="text" th:field="*{age}" /></td>
 				<td th:if="${#fields.hasErrors('age')}" th:errors="*{age}"
 					th:class="error">Age Error</td>
